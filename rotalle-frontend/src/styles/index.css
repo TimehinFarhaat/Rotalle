@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-champagne bg-charcoal antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-bronze text-charcoal font-semibold px-5 py-2.5 rounded-card
+           hover:bg-bronze-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-outline {
+    @apply border border-champagne-muted text-champagne px-5 py-2.5 rounded-card
+           hover:border-bronze hover:text-bronze transition-colors;
+  }
+  .card {
+    @apply bg-charcoal-light rounded-card border border-ink/10 shadow-sm;
+  }
+  .input {
+    @apply w-full bg-charcoal-light border border-champagne-muted rounded-card px-3 py-2
+           text-champagne placeholder:text-muted focus:outline-none focus:border-bronze transition-colors;
+    /* Light surface — native date-picker/spinner icons render dark-on-light. */
+    color-scheme: light;
+  }
+  /* Removes the up/down spinner arrows so accidental mouse-wheel scrolling
+     over a focused number input can't silently change the value. */
+  .input-no-spinner::-webkit-outer-spin-button,
+  .input-no-spinner::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .input-no-spinner {
+    -moz-appearance: textfield;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+  .badge-pending { @apply bg-warning/15 text-warning; }
+  .badge-approved { @apply bg-success/15 text-success; }
+  .badge-rejected, .badge-suspended, .badge-cancelled { @apply bg-danger/15 text-danger; }
+  .badge-available, .badge-active { @apply bg-success/15 text-success; }
+  .badge-completed { @apply bg-bronze/15 text-bronze; }
+}

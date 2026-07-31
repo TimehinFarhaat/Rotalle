@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Rotalle.Api/Rotalle.Api.csproj" />
+  <Project Path="Rotalle.Application/Rotalle.Application.csproj" />
+  <Project Path="Rotalle.Domain/Rotalle.Domain.csproj" />
+  <Project Path="Rotalle.Infrastructure/Rotalle.Infrastructure.csproj" />
+</Solution>

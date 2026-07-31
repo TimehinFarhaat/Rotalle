@@ -26,7 +26,8 @@ public partial class Program
             options.AddPolicy(name: myCorsPolicy,
                 policy =>
                 {
-                    policy.WithOrigins("http://localhost:5173") // Your frontend URL
+                    policy.WithOrigins("http://localhost:5173",
+                                       "https://rotalle.vercel.app") // Your frontend URL
                           .AllowAnyHeader()                     // Allows headers like Content-Type, Authorization, etc.
                           .AllowAnyMethod()                     // Allows POST, GET, PUT, DELETE, etc.
                           .AllowCredentials();                  // Needed if you handle cookies/auth tokens later

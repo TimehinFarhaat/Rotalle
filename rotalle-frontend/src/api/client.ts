@@ -54,7 +54,10 @@ export function extractErrorMessage(error: unknown): string {
     }
 
     const status = error.response.status;
-    const contentType = error.response.headers?.["content-type"] ?? "";
+ 
+    const contentType = String(
+  error.response.headers?.["content-type"] ?? ""
+);
     const data = error.response.data;
 
     const looksLikeRawDump =
